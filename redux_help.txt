@@ -1,0 +1,10 @@
+//install redux and connect with react with following command
+
+npm i redux react-redux
+=======================
+create two folder inside src folder
+    - actions -- create file like index.js(name can be chagned)
+    - reducers -- create file like first.js and one main file like index.js where all reducers will be registred
+
+    -- create new file inside src folder like store.js where all the data will be store there and can serve for any of the component
+--------------------------------

@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { incrNubmer, decrNubmer } from './actions/index'
+import { useSelector, useDispatch} from 'react-redux'
+const App = () => {
+  const myInitialState = useSelector((state)=>state.changeTheNumber);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='container mt-5'>
+        <button className='btn btn-success' onClick={()=> dispatch(incrNubmer())}>+</button>
+        <input type="text" name="incrNubmer" value={myInitialState} />
+        <button className='btn btn-warning' onClick={()=>dispatch(decrNubmer())}>-</button>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
